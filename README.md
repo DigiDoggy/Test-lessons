@@ -7,8 +7,7 @@ This repository contains materials and code examples related to the "Develop Rea
 About the Course
 The "Develop Real-Time Spring Boot Unit Tests" course provides practical skills for writing unit tests for Spring Boot applications using various tools and libraries such as JUnit 5, Mockito, MockMvc, TDD, JsonPath, Hamcrest, H2 Embedded DB, and MySQL.
 
-Course Link
-Course Link on Udemy
+[Course Link on Udemy](https://www.udemy.com/course/spring-boot-unit-testing)
 
 Repository Structure
 
