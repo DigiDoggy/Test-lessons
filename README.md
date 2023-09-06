@@ -1,21 +1,9 @@
-# Test-lessons
-I am learning to test code. The repository is just for practice and for visibility of work.
-Repository for the course "Develop Real-Time Spring Boot Unit Tests".
+# Spring Boot Unit Testing
 
-This repository contains materials and code examples related to the "Develop Real-Time Spring Boot Unit Tests" course on the Udemy platform. The course is designed for those who want to learn how to create and effectively apply unit tests in projects using Spring Boot.
+Source code for the course: [Spring Boot Unit Testing](http://www.luv2code.com/spring-boot-unit-testing-github)
 
-About the Course
-The "Develop Real-Time Spring Boot Unit Tests" course provides practical skills for writing unit tests for Spring Boot applications using various tools and libraries such as JUnit 5, Mockito, MockMvc, TDD, JsonPath, Hamcrest, H2 Embedded DB, and MySQL.
+If you have questions or need tech support, post your questions to the [classroom discussion forum](http://www.luv2code.com/spring-boot-unit-testing-github).
 
-[Course Link on Udemy](https://www.udemy.com/course/spring-boot-unit-testing)
+Happy coding!
 
-Repository Structure
-
-src/ - Source code of the Spring Boot project.
-test/ - Directory containing unit tests and examples of test scenarios.
-resources/ - Project resources, such as configuration files.
-Notes
-Please use this repository in conjunction with the materials from the "Develop Real-Time Spring Boot Unit Tests" course on Udemy. In the repository, you will find code examples and a project that will help you better understand and practically apply code testing concepts on the Spring Boot platform.
-
-Author:
-The course and this repository are authored by Chad Darby, Eric Roby.
+[<img src="images/spring-boot-unit-testing-thumbnail.png">](http://www.luv2code.com/spring-boot-unit-testing-github)
