@@ -2,7 +2,7 @@ package com.luv2code.component.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.luv2code.test.dao.ApplicationDao;
+import com.luv2code.component.dao.ApplicationDao;
 
 import java.util.List;
 
