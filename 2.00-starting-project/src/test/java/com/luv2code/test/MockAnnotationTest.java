@@ -44,12 +44,9 @@ public class MockAnnotationTest {
     @DisplayName("When & Verify")
     @Test
     public void assertEqualsTestAddGrades() {
-        when(applicationDao.addGradeResultsForSingleClass(
-                studentGrades.getMathGradeResults())).thenReturn(100.00);
+        when(applicationDao.addGradeResultsForSingleClass(studentGrades.getMathGradeResults())).thenReturn(100.00);
 
-        assertEquals(100, applicationService.addGradeResultsForSingleClass(
-                collegeStudentOne.getStudentGrades().getMathGradeResults()
-        ));
+        assertEquals(100, applicationService.addGradeResultsForSingleClass(collegeStudentOne.getStudentGrades().getMathGradeResults()));
 
         verify(applicationDao, times(1)).addGradeResultsForSingleClass(studentGrades.getMathGradeResults());
 
@@ -60,10 +57,8 @@ public class MockAnnotationTest {
     @Test
     public void assertEqualsTestFindGpa() {
 
-        when(applicationDao.findGradePointAverage(studentGrades.getMathGradeResults()))
-                .thenReturn(88.31);
-        assertEquals(88.31, applicationService.findGradePointAverage(collegeStudentOne
-                .getStudentGrades().getMathGradeResults()));
+        when(applicationDao.findGradePointAverage(studentGrades.getMathGradeResults())).thenReturn(88.31);
+        assertEquals(88.31, applicationService.findGradePointAverage(collegeStudentOne.getStudentGrades().getMathGradeResults()));
 
     }
 
@@ -71,24 +66,21 @@ public class MockAnnotationTest {
     @Test
     public void testAssertNotNull() {
 
-        when(applicationDao.checkNull(studentGrades.getMathGradeResults()))
-                .thenReturn(true);
-        assertNotNull(applicationService.checkNull(collegeStudentOne.getStudentGrades()
-                .getMathGradeResults()), "Object shout not be null");
+        when(applicationDao.checkNull(studentGrades.getMathGradeResults())).thenReturn(true);
+        assertNotNull(applicationService.checkNull(collegeStudentOne.getStudentGrades().getMathGradeResults()), "Object shout not be null");
 
     }
 
     @DisplayName("Throw runtime error")
     @Test
-    public void throwRuntimeError(){
-        CollegeStudent nullStudent= (CollegeStudent) context.getBean("collegeStudent");
+    public void throwRuntimeError() {
+        CollegeStudent nullStudent = (CollegeStudent) context.getBean("collegeStudent");
 
         doThrow(new RuntimeException()).when(applicationDao).checkNull(nullStudent);
 
-
-        assertThrows(RuntimeException.class,()->{
+        assertThrows(RuntimeException.class, () -> {
             applicationService.checkNull(nullStudent);
-        } );
+        });
 
         verify(applicationDao, times(1)).checkNull(nullStudent);
 
@@ -96,22 +88,18 @@ public class MockAnnotationTest {
 
     @DisplayName("Multiple Stubbing")
     @Test
-    public void stubbingConsecutiveCalls(){
-        CollegeStudent nullStudent= (CollegeStudent) context.getBean("collegeStudent");
+    public void stubbingConsecutiveCalls() {
+        CollegeStudent nullStudent = (CollegeStudent) context.getBean("collegeStudent");
 
-        when(applicationDao.checkNull(nullStudent))
-                .thenThrow(new RuntimeException())
-                .thenReturn("Do not throw exception second time");
+        when(applicationDao.checkNull(nullStudent)).thenThrow(new RuntimeException()).thenReturn("Do not throw exception second time");
 
-        assertThrows(RuntimeException.class,()->{
+        assertThrows(RuntimeException.class, () -> {
             applicationService.checkNull(nullStudent);
         });
 
-        assertEquals("Do not throw exception second time",
-                applicationService.checkNull(nullStudent));
+        assertEquals("Do not throw exception second time", applicationService.checkNull(nullStudent));
 
-        verify(applicationDao,times(2)).checkNull(nullStudent);
-
+        verify(applicationDao, times(2)).checkNull(nullStudent);
 
     }
 }
